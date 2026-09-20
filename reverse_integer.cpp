@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 int main()
@@ -11,6 +12,10 @@ int main()
     while(num != 0){
         rem = num%10;
         num = num/10;
+        
+        if(ans > INT_MAX/10 || ans<INT_MIN/10){
+            return 0;
+        }
         ans = ans * 10 + rem;
     }
     cout<<ans;
